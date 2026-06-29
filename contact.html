@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZIVARO | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">Z</span>
+        <div>
+          <h1>ZIVARO</h1>
+          <p>Parfums de Luxe</p>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" data-menu-toggle><span></span><span></span><span></span></button>
+      <nav class="nav" data-nav>
+        <a href="index.html">Accueil</a>
+        <a href="parfums.html">Parfums</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-switch" type="button" data-lang-toggle>FR / AR</button>
+        <button class="cart-btn" type="button" onclick="showCart()">🛒 <span id="cart-count">0</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reveal">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span class="pill">تواصل</span>
+            <h2 class="page-title">نحن هنا لمساعدتك واختيار الأفضل لك</h2>
+            <p>أرسل لنا رسالتك للحصول على نصائح مخصصة أو توصيات عن العطور أو لمعرفت أكثر حول عروضنا.</p>
+            <div class="info-card" style="margin-top: 16px;">
+              <h4>واتساب</h4>
+              <p>+212 77 822 4439</p>
+            </div>
+            <div class="info-card" style="margin-top: 12px;">
+              <h4>البريد الإلكتروني</h4>
+              <p>contact@zivaro.ma</p>
+            </div>
+            <div class="info-card" style="margin-top: 12px;">
+              <h4>إنستغرام</h4>
+              <p>@zivaro_parfum</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <form>
+              <div class="form-group">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="اسمك الكامل" />
+              </div>
+              <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input id="email" type="email" placeholder="بريدك الإلكتروني" />
+              </div>
+              <div class="form-group">
+                <label for="message">الرسالة</label>
+                <textarea id="message" placeholder="اكتب رسالتك هنا"></textarea>
+              </div>
+              <button class="btn btn-primary" type="button">إرسال</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="section reveal">
+          <div class="map-card">
+            <div>
+              <h3>العنوان</h3>
+              <p>الدار البيضاء، المغرب</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div><h3>ZIVARO</h3><p>Parfums de luxe inspirés des grandes maisons.</p></div>
+      <div><a href="https://wa.me/212778224439" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/zivaro_parfum?igsh=MW4wYmFqZ2F5ZXcwdw==" target="_blank" rel="noopener">Instagram ZIVARO</a></div>
+      <div><p>© 2026 ZIVARO</p></div>
+    </footer>
+
+    <div class="cart-box" id="cart-box" aria-live="polite">
+      <div class="cart-header"><h3>Panier</h3><button type="button" onclick="closeCart()">✕</button></div>
+      <div id="cart-items"></div>
+      <div class="cart-footer"><h4 id="total">Total : 0 DH</h4><button class="btn btn-primary" type="button" onclick="clearCart()">Vider</button></div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

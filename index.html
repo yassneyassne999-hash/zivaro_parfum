@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZIVARO | Parfums de Luxe</title>
+    <meta name="description" content="ZIVARO propose des parfums de luxe inspirés des grandes maisons avec qualité premium, livraison rapide et prix attractifs." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">Z</span>
+        <div>
+          <h1 data-i18n="brandName">ZIVARO</h1>
+          <p data-i18n="brandTag">Parfums de Luxe</p>
+        </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" data-nav>
+        <a href="index.html" data-i18n="navHome">الصفحة الرئيسية</a>
+        <a href="parfums.html" data-i18n="navParfums">العطور</a>
+        <a href="apropos.html" data-i18n="navAbout">ضرة علينا</a>
+        <a href="contact.html" data-i18n="navContact">تواصل</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" type="button" data-lang-toggle>FR / AR</button>
+        <button class="cart-btn" type="button" onclick="showCart()">
+          🛒 <span id="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <div class="hero-content">
+          <span class="pill" data-i18n="heroBadge">المجموعة الجديدة 2026</span>
+          <h2 data-i18n="heroTitle">روائح أنيقة تُلفت الأنظار وتترك أثرًا لا يُنسى.</h2>
+          <p data-i18n="heroText">عطور 30 مل مستوحاة من أشهر العلامات العالمية، بجودة مميزة وثبات ممتاز وأسعار تنافسية.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html" data-i18n="heroBtnPrimary">اطلب الآن</a>
+            <a class="btn btn-secondary" href="parfums.html" data-i18n="heroBtnSecondary">شوف العطور</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>4.9/5</strong>
+              <span data-i18n="statClients">زبناء راضيين</span>
+            </div>
+            <div>
+              <strong>24h</strong>
+              <span data-i18n="statDelivery">توصيل سريع</span>
+            </div>
+            <div>
+              <strong>50+</strong>
+              <span data-i18n="statParfums">عطور</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="hero-card card-main">
+            <h3 data-i18n="heroCardTitle">التوقيع الفاخر</h3>
+            <p data-i18n="heroCardText">رائحة أنيقة تُلفت الانتباه فورًا</p>
+            <span data-i18n="heroCardPrice">ابتداء من 40 درهم</span>
+          </div>
+          <div class="hero-card card-side">
+            <h3 data-i18n="offerCardTitle">عرض خاص</h3>
+            <p data-i18n="offerCardText">4 عطور = 160 درهم</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-strip reveal">
+        <div><strong>✨</strong><span data-i18n="feature1">جودة مميزة</span></div>
+        <div><strong>🚚</strong><span data-i18n="feature2">توصيل سريع</span></div>
+        <div><strong>💎</strong><span data-i18n="feature3">أسعار مناسبة</span></div>
+        <div><strong>⭐</strong><span data-i18n="feature4">رضا مضمون</span></div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <span class="pill" data-i18n="bestSellersLabel">الأكثر مبيعًا</span>
+          <h2 data-i18n="bestSellersTitle">اختر توقيعك</h2>
+          <p data-i18n="bestSellersText">روائح راقية وحديثة تناسب كل المناسبات وتليق بكل لحظة.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Prada Paradoxe</h3>
+              <p>30 مل • عطر زهري أنيق</p>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Prada Paradoxe" data-price="40">أضف</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Kayali Vanilla 28</h3>
+              <p>30 مل • فانيليا لذيذة</p>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Kayali Vanilla 28" data-price="40">أضف</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Jean Paul Gaultier</h3>
+              <p>30 مل • عطر حساس وجريء</p>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Jean Paul Gaultier" data-price="40">أضف</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Givenchy L'Interdit</h3>
+              <p>30 مل • أنيق وقوي</p>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Givenchy L'Interdit" data-price="40">أضف</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <span class="pill" data-i18n="advantagesLabel">المزايا</span>
+          <h2 data-i18n="advantagesTitle">لماذا تختار ZIVARO؟</h2>
+        </div>
+        <div class="cards-grid cards-4">
+          <article class="info-card">
+            <h3>✨</h3>
+            <h4 data-i18n="adv1Title">جودة مميزة</h4>
+            <p data-i18n="adv1Text">تركيبات راقية وثبات استثنائي.</p>
+          </article>
+          <article class="info-card">
+            <h3>🚚</h3>
+            <h4 data-i18n="adv2Title">توصيل سريع</h4>
+            <p data-i18n="adv2Text">توصيل موثوق في كل المغرب خلال 24 ساعة.</p>
+          </article>
+          <article class="info-card">
+            <h3>💸</h3>
+            <h4 data-i18n="adv3Title">أسعار معقولة</h4>
+            <p data-i18n="adv3Text">عروض فاخرة بدون ما تضحيو على الأسلوب.</p>
+          </article>
+          <article class="info-card">
+            <h3>⭐</h3>
+            <h4 data-i18n="adv4Title">رضا مضمون</h4>
+            <p data-i18n="adv4Text">تجربة عميل مريحة ومرافقة من أول طلب إلى آخر خطوة.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-heading">
+          <span class="pill" data-i18n="testimonialsLabel">آراء العملاء</span>
+          <h2 data-i18n="testimonialsTitle">ماذا يقول عملاؤنا عنا؟</h2>
+        </div>
+        <div class="cards-grid cards-3">
+          <article class="testimonial-card">
+            <p>“أصيلة وفخمة في كل رشّة، والتغليف ممتاز والجودة حقيقية من أول مرة.”</p>
+            <h4>أمال ب.</h4>
+            <span>★★★★★</span>
+          </article>
+          <article class="testimonial-card">
+            <p>“توصيل سريع جدًا والعطور راقية جدًا، وقد وجدت توقيعي في أيام قليلة.”</p>
+            <h4>يوسف ك.</h4>
+            <span>★★★★★</span>
+          </article>
+          <article class="testimonial-card">
+            <p>“أفضل نسبة جودة إلى سعر رأيتها مؤخّرًا، وأنا راضٍ جدًا عن الخدمة.”</p>
+            <h4>سارة م.</h4>
+            <span>★★★★★</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <h3>ZIVARO</h3>
+        <p data-i18n="footerText">عطور فاخرة مستوحاة من أشهر العلامات، متاحة لكم بسهولة وبتصميم عصري.</p>
+      </div>
+      <div>
+        <a href="https://wa.me/212778224439" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/zivaro_parfum?igsh=MW4wYmFqZ2F5ZXcwdw==" target="_blank" rel="noopener">Instagram ZIVARO</a>
+        <a href="contact.html" data-i18n="footerContact">تواصل</a>
+      </div>
+      <div>
+        <p>© 2026 ZIVARO</p>
+      </div>
+    </footer>
+
+    <div class="cart-box" id="cart-box" aria-live="polite">
+      <div class="cart-header">
+        <h3 data-i18n="cartTitle">السلة</h3>
+        <button type="button" onclick="closeCart()">✕</button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <h4 id="total">Total : 0 DH</h4>
+        <button class="btn btn-primary" type="button" onclick="clearCart()" data-i18n="cartClear">فرغ</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="offer-modal" id="offer-modal">
+      <div class="offer-card">
+        <span class="pill">🎁 Offre spéciale</span>
+        <h3 data-i18n="offerModalTitle">4 عطور = 160 درهم</h3>
+        <p data-i18n="offerModalText">استفد من سعر خاص على اختيارنا الفاخر.</p>
+        <button class="btn btn-primary" type="button" onclick="closeOfferModal()" data-i18n="offerModalBtn">استفد من العرض</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="orderModal" class="modal">
+  <div class="modal-content">
+    <h2>تأكيد الطلب</h2>
+    <p id="productName"></p>
+
+    <button onclick="sendWhatsApp()">تأكيد وإرسال</button>
+    <button onclick="closeModal()">إلغاء</button>
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZIVARO | Parfums</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">Z</span>
+        <div>
+          <h1>ZIVARO</h1>
+          <p>Parfums de Luxe</p>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" data-menu-toggle><span></span><span></span><span></span></button>
+      <nav class="nav" data-nav>
+        <a href="index.html">Accueil</a>
+        <a href="parfums.html">Parfums</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-switch" type="button" data-lang-toggle>FR / AR</button>
+        <button class="cart-btn" type="button" onclick="showCart()">🛒 <span id="cart-count">0</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reveal">
+        <h2 class="page-title">مجموعة العطور</h2>
+        <p class="page-intro">اكتشف عطورًا راقية وحديثة وفاخرة مصنفة بعناية في فئات تناسب كل ذوق.</p>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="luxe">فخم</button>
+          <button class="filter-btn" data-filter="niche">نيش</button>
+          <button class="filter-btn" data-filter="daily">يومي</button>
+          <button class="filter-btn" data-filter="offers">عروض</button>
+        </div>
+        <div class="products-grid">
+          <article class="product-card" data-category="luxe">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Prada Paradoxe</h3>
+              <p>عطر زهري أنيق و Feminine.</p>
+              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Prada Paradoxe" data-price="40">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="niche">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Kayali Vanilla 28</h3>
+              <p>فانيليا دافئة ولذيذة.</p>
+              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Kayali Vanilla 28" data-price="40">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="daily">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Jean Paul Gaultier</h3>
+              <p>توقيع جذاب ومناسب يوميًا.</p>
+              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Jean Paul Gaultier" data-price="40">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="offers">
+            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Givenchy L'Interdit</h3>
+              <p>أناقة وقوة في عطر واحد.</p>
+              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Givenchy L'Interdit" data-price="40">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="luxe">
+            <img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Maison Margiela</h3>
+              <p>عطر بسيط وأنيق جدًا.</p>
+              <div class="product-footer"><strong>45 DH</strong><button type="button" data-add-to-cart data-name="Maison Margiela" data-price="45">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="niche">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Maison de Nuit</h3>
+              <p>توقيع شرقي غامض ومميز.</p>
+              <div class="product-footer"><strong>42 DH</strong><button type="button" data-add-to-cart data-name="Maison de Nuit" data-price="42">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="daily">
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Velvet Bloom</h3>
+              <p>مزيج لطيف ومناسب لكل يوم.</p>
+              <div class="product-footer"><strong>38 DH</strong><button type="button" data-add-to-cart data-name="Velvet Bloom" data-price="38">أضف</button></div>
+            </div>
+          </article>
+          <article class="product-card" data-category="offers">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=80" alt="Parfum luxe" />
+            <div class="product-info">
+              <h3>Pack 4 Parfums</h3>
+              <p>عرض خاص: 4 عطور = 160 درهم.</p>
+              <div class="product-footer"><strong>160 DH</strong><button type="button" data-add-to-cart data-name="Pack 4 Parfums" data-price="160">أضف</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div><h3>ZIVARO</h3><p>Parfums de luxe inspirés des grandes maisons.</p></div>
+      <div><a href="https://wa.me/212778224439" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/zivaro_parfum?igsh=MW4wYmFqZ2F5ZXcwdw==" target="_blank" rel="noopener">Instagram ZIVARO</a></div>
+      <div><p>© 2026 ZIVARO</p></div>
+    </footer>
+
+    <div class="cart-box" id="cart-box" aria-live="polite">
+      <div class="cart-header"><h3>Panier</h3><button type="button" onclick="closeCart()">✕</button></div>
+      <div id="cart-items"></div>
+      <div class="cart-footer"><h4 id="total">Total : 0 DH</h4><button class="btn btn-primary" type="button" onclick="clearCart()">Vider</button></div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
