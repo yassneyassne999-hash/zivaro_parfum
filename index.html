@@ -40,6 +40,69 @@
     </header>
 
     <main id="top">
+
+      <!-- ===== PACK SPECIAL (TOUT EN HAUT) ===== -->
+      <div style="
+        margin: 24px 0 32px;
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid rgba(201,168,76,0.3);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      ">
+        <img
+          src="zivaro/images/WhatsApp Image 2026-06-29 at 20.41.51.jpeg"
+          alt="Pack 4 Parfums Zivaro"
+          style="width:100%; display:block; object-fit:cover; max-height:500px;"
+        />
+        <!-- OVERLAY -->
+        <div style="
+          position:absolute; inset:0;
+          background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+        "></div>
+        <!-- TEXT -->
+        <div style="
+          position:absolute; bottom:0; left:0; right:0;
+          padding: 32px;
+          text-align: center;
+        ">
+          <p style="
+            font-size:0.7rem; letter-spacing:5px; color:#c9a84c;
+            text-transform:uppercase; margin:0 0 10px;
+          ">✦ عرض خاص ✦</p>
+          <h2 style="
+            font-family:'Playfair Display',serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color:#fff; margin:0 0 8px; line-height:1.1;
+          ">Pack 4 Parfums</h2>
+          <p style="
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            color:#e8c96a; font-weight:700; margin:0 0 6px;
+            letter-spacing:2px;
+          ">160 DH — توصيل مجاني 🚚</p>
+          <p style="
+            font-size:0.85rem; color:#d8c9a3;
+            letter-spacing:1px; margin:0 0 20px;
+          ">🌹 كل قارورة 30ml</p>
+          <a href="https://wa.me/212778224439?text=مرحباً%20أريد%20طلب%20Pack%204%20Parfums%20بـ%20160%20DH%20مع%20توصيل%20مجاني%20🌹"
+            target="_blank"
+            style="
+              display:inline-block;
+              padding: 13px 36px;
+              background: linear-gradient(135deg, #7a6330, #c9a84c, #e8c96a);
+              color:#111; font-weight:700; font-size:0.9rem;
+              letter-spacing:3px; text-transform:uppercase;
+              border-radius:999px; text-decoration:none;
+              box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+              transition: transform 0.2s;
+            "
+            onmouseover="this.style.transform='translateY(-2px)'"
+            onmouseout="this.style.transform=''"
+          >📲 اطلب الآن عبر واتساب</a>
+        </div>
+      </div>
+      <!-- ===== FIN PACK SPECIAL ===== -->
+
       <section class="hero reveal">
         <div class="hero-content">
           <span class="pill" data-i18n="heroBadge">المجموعة الجديدة 2026</span>
@@ -180,17 +243,17 @@
         </div>
         <div class="cards-grid cards-3">
           <article class="testimonial-card">
-            <p>“أصيلة وفخمة في كل رشّة، والتغليف ممتاز والجودة حقيقية من أول مرة.”</p>
+            <p>"أصيلة وفخمة في كل رشّة، والتغليف ممتاز والجودة حقيقية من أول مرة."</p>
             <h4>أمال ب.</h4>
             <span>★★★★★</span>
           </article>
           <article class="testimonial-card">
-            <p>“توصيل سريع جدًا والعطور راقية جدًا، وقد وجدت توقيعي في أيام قليلة.”</p>
+            <p>"توصيل سريع جدًا والعطور راقية جدًا، وقد وجدت توقيعي في أيام قليلة."</p>
             <h4>يوسف ك.</h4>
             <span>★★★★★</span>
           </article>
           <article class="testimonial-card">
-            <p>“أفضل نسبة جودة إلى سعر رأيتها مؤخّرًا، وأنا راضٍ جدًا عن الخدمة.”</p>
+            <p>"أفضل نسبة جودة إلى سعر رأيتها مؤخّرًا، وأنا راضٍ جدًا عن الخدمة."</p>
             <h4>سارة م.</h4>
             <span>★★★★★</span>
           </article>
@@ -237,14 +300,5 @@
     </div>
 
     <script src="script.js"></script>
-    <div id="orderModal" class="modal">
-  <div class="modal-content">
-    <h2>تأكيد الطلب</h2>
-    <p id="productName"></p>
-
-    <button onclick="sendWhatsApp()">تأكيد وإرسال</button>
-    <button onclick="closeModal()">إلغاء</button>
-  </div>
-</div>
   </body>
 </html>
