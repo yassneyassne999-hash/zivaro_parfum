@@ -19,18 +19,15 @@
           <p data-i18n="brandTag">Parfums de Luxe</p>
         </div>
       </a>
-
       <button class="menu-toggle" type="button" aria-label="Menu" data-menu-toggle>
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav" data-nav>
         <a href="index.html" data-i18n="navHome">الصفحة الرئيسية</a>
         <a href="parfums.html" data-i18n="navParfums">العطور</a>
         <a href="apropos.html" data-i18n="navAbout">ضرة علينا</a>
         <a href="contact.html" data-i18n="navContact">تواصل</a>
       </nav>
-
       <div class="header-actions">
         <button class="lang-switch" type="button" data-lang-toggle>FR / AR</button>
         <button class="cart-btn" type="button" onclick="showCart()">
@@ -41,67 +38,20 @@
 
     <main id="top">
 
-      <!-- ===== PACK SPECIAL (TOUT EN HAUT) ===== -->
-      <div style="
-        margin: 24px 0 32px;
-        border-radius: 24px;
-        overflow: hidden;
-        position: relative;
-        border: 1px solid rgba(201,168,76,0.3);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      ">
-        <img
-          src="zivaro/images/WhatsApp Image 2026-06-29 at 20.41.51.jpeg"
-          alt="Pack 4 Parfums Zivaro"
-          style="width:100%; display:block; object-fit:cover; max-height:500px;"
-        />
-        <!-- OVERLAY -->
-        <div style="
-          position:absolute; inset:0;
-          background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
-        "></div>
-        <!-- TEXT -->
-        <div style="
-          position:absolute; bottom:0; left:0; right:0;
-          padding: 32px;
-          text-align: center;
-        ">
-          <p style="
-            font-size:0.7rem; letter-spacing:5px; color:#c9a84c;
-            text-transform:uppercase; margin:0 0 10px;
-          ">✦ عرض خاص ✦</p>
-          <h2 style="
-            font-family:'Playfair Display',serif;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            color:#fff; margin:0 0 8px; line-height:1.1;
-          ">Pack 4 Parfums</h2>
-          <p style="
-            font-size: clamp(1.4rem, 3vw, 2.2rem);
-            color:#e8c96a; font-weight:700; margin:0 0 6px;
-            letter-spacing:2px;
-          ">160 DH — توصيل مجاني 🚚</p>
-          <p style="
-            font-size:0.85rem; color:#d8c9a3;
-            letter-spacing:1px; margin:0 0 20px;
-          ">🌹 كل قارورة 30ml</p>
-          <a href="https://wa.me/212778224439?text=مرحباً%20أريد%20طلب%20Pack%204%20Parfums%20بـ%20160%20DH%20مع%20توصيل%20مجاني%20🌹"
-            target="_blank"
-            style="
-              display:inline-block;
-              padding: 13px 36px;
-              background: linear-gradient(135deg, #7a6330, #c9a84c, #e8c96a);
-              color:#111; font-weight:700; font-size:0.9rem;
-              letter-spacing:3px; text-transform:uppercase;
-              border-radius:999px; text-decoration:none;
-              box-shadow: 0 8px 30px rgba(201,168,76,0.4);
-              transition: transform 0.2s;
-            "
-            onmouseover="this.style.transform='translateY(-2px)'"
-            onmouseout="this.style.transform=''"
-          >📲 اطلب الآن عبر واتساب</a>
+      <!-- PACK SPECIAL -->
+      <div style="margin:24px 0 32px;border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+        <img src="zivaro/images/WhatsApp Image 2026-06-29 at 20.41.51.jpeg" alt="Pack 4 Parfums Zivaro" style="width:100%;display:block;object-fit:cover;max-height:500px;" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:32px;text-align:center;">
+          <p style="font-size:0.7rem;letter-spacing:5px;color:#c9a84c;text-transform:uppercase;margin:0 0 10px;">✦ عرض خاص ✦</p>
+          <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;margin:0 0 8px;line-height:1.1;">Pack 4 Parfums</h2>
+          <p style="font-size:clamp(1.4rem,3vw,2.2rem);color:#e8c96a;font-weight:700;margin:0 0 6px;letter-spacing:2px;">160 DH — توصيل مجاني 🚚</p>
+          <p style="font-size:0.85rem;color:#d8c9a3;letter-spacing:1px;margin:0 0 20px;">🌹 كل قارورة 30ml</p>
+          <button onclick="addToCart('Pack 4 Parfums', 160)" style="display:inline-block;padding:13px 36px;background:linear-gradient(135deg,#7a6330,#c9a84c,#e8c96a);color:#111;font-weight:700;font-size:0.9rem;letter-spacing:3px;text-transform:uppercase;border-radius:999px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(201,168,76,0.4);">
+            🛒 أضف للسلة
+          </button>
         </div>
       </div>
-      <!-- ===== FIN PACK SPECIAL ===== -->
 
       <section class="hero reveal">
         <div class="hero-content">
@@ -109,25 +59,15 @@
           <h2 data-i18n="heroTitle">روائح أنيقة تُلفت الأنظار وتترك أثرًا لا يُنسى.</h2>
           <p data-i18n="heroText">عطور 30 مل مستوحاة من أشهر العلامات العالمية، بجودة مميزة وثبات ممتاز وأسعار تنافسية.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html" data-i18n="heroBtnPrimary">اطلب الآن</a>
+            <a class="btn btn-primary" href="parfums.html" data-i18n="heroBtnPrimary">اطلب الآن</a>
             <a class="btn btn-secondary" href="parfums.html" data-i18n="heroBtnSecondary">شوف العطور</a>
           </div>
           <div class="hero-stats">
-            <div>
-              <strong>4.9/5</strong>
-              <span data-i18n="statClients">زبناء راضيين</span>
-            </div>
-            <div>
-              <strong>24h</strong>
-              <span data-i18n="statDelivery">توصيل سريع</span>
-            </div>
-            <div>
-              <strong>50+</strong>
-              <span data-i18n="statParfums">عطور</span>
-            </div>
+            <div><strong>4.9/5</strong><span data-i18n="statClients">زبناء راضيين</span></div>
+            <div><strong>24h</strong><span data-i18n="statDelivery">توصيل سريع</span></div>
+            <div><strong>50+</strong><span data-i18n="statParfums">عطور</span></div>
           </div>
         </div>
-
         <div class="hero-visual">
           <div class="orb orb-one"></div>
           <div class="orb orb-two"></div>
@@ -158,7 +98,7 @@
         </div>
         <div class="products-grid">
           <article class="product-card">
-            <img src="zivaro/images/img src=imagesperfume4.jpg.jpeg" alt="Parfum luxe" />
+            <img src="zivaro/images/img src=imagesperfume4.jpg.jpeg" alt="Prada Paradoxe" />
             <div class="product-info">
               <h3>Prada Paradoxe</h3>
               <p>30 مل • عطر زهري أنيق</p>
@@ -168,9 +108,8 @@
               </div>
             </div>
           </article>
-
           <article class="product-card">
-            <img src="zivaro/images/img src=imagesperfume1.jpg.jpeg" alt="Parfum luxe" />
+            <img src="zivaro/images/img src=imagesperfume1.jpg.jpeg" alt="Kayali Vanilla 28" />
             <div class="product-info">
               <h3>Kayali Vanilla 28</h3>
               <p>30 مل • فانيليا لذيذة</p>
@@ -180,9 +119,8 @@
               </div>
             </div>
           </article>
-
           <article class="product-card">
-            <img src="zivaro/images/img src=imagesperfume2.jpg.jpeg" alt="Parfum luxe" />
+            <img src="zivaro/images/img src=imagesperfume2.jpg.jpeg" alt="Jean Paul Gaultier" />
             <div class="product-info">
               <h3>Jean Paul Gaultier</h3>
               <p>30 مل • عطر حساس وجريء</p>
@@ -192,9 +130,8 @@
               </div>
             </div>
           </article>
-
           <article class="product-card">
-            <img src="zivaro/images/img src=imagesperfume3.jpg.jpeg" alt="Parfum luxe" />
+            <img src="zivaro/images/img src=imagesperfume3.jpg.jpeg" alt="Givenchy L Interdit" />
             <div class="product-info">
               <h3>Givenchy L'Interdit</h3>
               <p>30 مل • أنيق وقوي</p>
@@ -213,26 +150,10 @@
           <h2 data-i18n="advantagesTitle">لماذا تختار ZIVARO؟</h2>
         </div>
         <div class="cards-grid cards-4">
-          <article class="info-card">
-            <h3>✨</h3>
-            <h4 data-i18n="adv1Title">جودة مميزة</h4>
-            <p data-i18n="adv1Text">تركيبات راقية وثبات استثنائي.</p>
-          </article>
-          <article class="info-card">
-            <h3>🚚</h3>
-            <h4 data-i18n="adv2Title">توصيل سريع</h4>
-            <p data-i18n="adv2Text">توصيل موثوق في كل المغرب خلال 24 ساعة.</p>
-          </article>
-          <article class="info-card">
-            <h3>💸</h3>
-            <h4 data-i18n="adv3Title">أسعار معقولة</h4>
-            <p data-i18n="adv3Text">عروض فاخرة بدون ما تضحيو على الأسلوب.</p>
-          </article>
-          <article class="info-card">
-            <h3>⭐</h3>
-            <h4 data-i18n="adv4Title">رضا مضمون</h4>
-            <p data-i18n="adv4Text">تجربة عميل مريحة ومرافقة من أول طلب إلى آخر خطوة.</p>
-          </article>
+          <article class="info-card"><h3>✨</h3><h4 data-i18n="adv1Title">جودة مميزة</h4><p data-i18n="adv1Text">تركيبات راقية وثبات استثنائي.</p></article>
+          <article class="info-card"><h3>🚚</h3><h4 data-i18n="adv2Title">توصيل سريع</h4><p data-i18n="adv2Text">توصيل موثوق في كل المغرب خلال 24 ساعة.</p></article>
+          <article class="info-card"><h3>💸</h3><h4 data-i18n="adv3Title">أسعار معقولة</h4><p data-i18n="adv3Text">عروض فاخرة بدون ما تضحيو على الأسلوب.</p></article>
+          <article class="info-card"><h3>⭐</h3><h4 data-i18n="adv4Title">رضا مضمون</h4><p data-i18n="adv4Text">تجربة عميل مريحة ومرافقة من أول طلب إلى آخر خطوة.</p></article>
         </div>
       </section>
 
@@ -242,54 +163,56 @@
           <h2 data-i18n="testimonialsTitle">ماذا يقول عملاؤنا عنا؟</h2>
         </div>
         <div class="cards-grid cards-3">
-          <article class="testimonial-card">
-            <p>"أصيلة وفخمة في كل رشّة، والتغليف ممتاز والجودة حقيقية من أول مرة."</p>
-            <h4>أمال ب.</h4>
-            <span>★★★★★</span>
-          </article>
-          <article class="testimonial-card">
-            <p>"توصيل سريع جدًا والعطور راقية جدًا، وقد وجدت توقيعي في أيام قليلة."</p>
-            <h4>يوسف ك.</h4>
-            <span>★★★★★</span>
-          </article>
-          <article class="testimonial-card">
-            <p>"أفضل نسبة جودة إلى سعر رأيتها مؤخّرًا، وأنا راضٍ جدًا عن الخدمة."</p>
-            <h4>سارة م.</h4>
-            <span>★★★★★</span>
-          </article>
+          <article class="testimonial-card"><p>"أصيلة وفخمة في كل رشّة، والتغليف ممتاز والجودة حقيقية من أول مرة."</p><h4>أمال ب.</h4><span>★★★★★</span></article>
+          <article class="testimonial-card"><p>"توصيل سريع جدًا والعطور راقية جدًا، وقد وجدت توقيعي في أيام قليلة."</p><h4>يوسف ك.</h4><span>★★★★★</span></article>
+          <article class="testimonial-card"><p>"أفضل نسبة جودة إلى سعر رأيتها مؤخّرًا، وأنا راضٍ جدًا عن الخدمة."</p><h4>سارة م.</h4><span>★★★★★</span></article>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div>
-        <h3>ZIVARO</h3>
-        <p data-i18n="footerText">عطور فاخرة مستوحاة من أشهر العلامات، متاحة لكم بسهولة وبتصميم عصري.</p>
-      </div>
+      <div><h3>ZIVARO</h3><p data-i18n="footerText">عطور فاخرة مستوحاة من أشهر العلامات، متاحة لكم بسهولة وبتصميم عصري.</p></div>
       <div>
         <a href="https://wa.me/212778224439" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://www.instagram.com/zivaro_parfum?igsh=MW4wYmFqZ2F5ZXcwdw==" target="_blank" rel="noopener">Instagram ZIVARO</a>
         <a href="contact.html" data-i18n="footerContact">تواصل</a>
       </div>
-      <div>
-        <p>© 2026 ZIVARO</p>
-      </div>
+      <div><p>© 2026 ZIVARO</p></div>
     </footer>
 
+    <!-- السلة -->
     <div class="cart-box" id="cart-box" aria-live="polite">
       <div class="cart-header">
-        <h3 data-i18n="cartTitle">السلة</h3>
+        <h3>السلة 🛒</h3>
         <button type="button" onclick="closeCart()">✕</button>
       </div>
       <div id="cart-items"></div>
       <div class="cart-footer">
-        <h4 id="total">Total : 0 DH</h4>
-        <button class="btn btn-primary" type="button" onclick="clearCart()" data-i18n="cartClear">فرغ</button>
+        <h4 id="total">الإجمالي: 0 DH</h4>
+        <button class="btn btn-primary" type="button" onclick="openOrderModal()" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;padding:12px 20px;border-radius:999px;font-weight:700;cursor:pointer;">
+          📲 تأكيد الطلب عبر واتساب
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL معلومات الطلب -->
+    <div id="order-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:20px;">
+      <div style="background:#151515;border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:28px;max-width:420px;width:100%;position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);border-radius:20px 20px 0 0;"></div>
+        <button onclick="closeOrderModal()" style="position:absolute;top:14px;left:14px;background:transparent;border:0;color:#c9a84c;font-size:1.3rem;cursor:pointer;">✕</button>
+        <h3 style="font-family:'Playfair Display',serif;color:#f8f3e8;text-align:center;margin:0 0 6px;font-size:1.4rem;">تأكيد الطلب</h3>
+        <p id="order-summary" style="text-align:center;color:#c9a84c;font-size:0.82rem;margin:0 0 20px;letter-spacing:1px;"></p>
+        <div style="display:grid;gap:12px;">
+          <input id="order-name" type="text" placeholder="الاسم الكامل *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;" />
+          <input id="order-city" type="text" placeholder="المدينة *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;" />
+          <input id="order-address" type="text" placeholder="الموقع / الحي *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;" />
+          <input id="order-phone" type="tel" placeholder="رقم الهاتف *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;" />
+        </div>
+        <button onclick="submitOrder()" style="width:100%;margin-top:18px;padding:13px;background:linear-gradient(135deg,#7a6330,#c9a84c,#e8c96a);color:#111;border:0;border-radius:10px;font-weight:700;font-size:0.95rem;letter-spacing:2px;cursor:pointer;">📲 إرسال الطلب عبر واتساب</button>
       </div>
     </div>
 
     <div class="toast" id="toast"></div>
-
     <div class="offer-modal" id="offer-modal">
       <div class="offer-card">
         <span class="pill">🎁 Offre spéciale</span>
