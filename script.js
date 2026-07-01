@@ -11,7 +11,7 @@ const translations = {
     heroBtnPrimary: 'Commander maintenant', heroBtnSecondary: 'Voir les parfums',
     statClients: 'clients satisfaits', statDelivery: 'livraison rapide', statParfums: 'parfums',
     heroCardTitle: 'Signature Elite', heroCardText: 'Une fragrance chic et captivante', heroCardPrice: 'À partir de 40 DH',
-    offerCardTitle: 'Offre spéciale', offerCardText: 'Pack 4 parfums = 160 DH',
+    offerCardTitle: 'Offre spéciale', offerCardText: '4 parfums = 160 DH',
     feature1: 'Qualité Premium', feature2: 'Livraison rapide', feature3: 'Prix accessibles', feature4: 'Satisfaction garantie',
     bestSellersLabel: 'Meilleures ventes', bestSellersTitle: 'Choisissez votre signature', bestSellersText: 'Des accords raffinés et modernes pour toutes les occasions.',
     advantagesLabel: 'Avantages', advantagesTitle: 'Pourquoi choisir ZIVARO ?',
@@ -21,16 +21,7 @@ const translations = {
     adv4Title: 'Satisfaction Garantie', adv4Text: 'Une expérience client soignée et rassurante.',
     testimonialsLabel: 'Témoignages', testimonialsTitle: 'Ce que disent nos clients',
     footerText: 'Parfums de luxe inspirés des grandes maisons, à portée de main.', footerContact: 'Contact',
-    cartTitle: 'Panier', cartClear: 'Vider', cartWhatsapp: '📲 Commander via WhatsApp',
-    offerModalTitle: 'Pack 4 parfums = 160 DH', offerModalText: 'Profitez d\'un prix exceptionnel sur notre sélection Premium.', offerModalBtn: 'Profiter de l\'offre',
-    pageTitle: 'ZIVARO – Parfums de Luxe', aboutIntro: 'L\'élégance commence par une identité forte.',
-    aboutMission: 'Notre mission', aboutValues: 'Nos valeurs', aboutStatsTitle: 'Chiffres clés',
-    contactTitle: 'Contactez-nous', contactText: 'Nous sommes à votre écoute pour vous conseiller et vous accompagner.',
-    formName: 'Nom', formEmail: 'Email', formMessage: 'Message', formSend: 'Envoyer',
-    contactDetails: 'Coordonnées', addressTitle: 'Adresse', addressText: 'Casablanca, Maroc',
-    filtersAll: 'Tous', filtersLuxe: 'Luxe', filtersNiche: 'Niche', filtersDaily: 'Quotidien', filtersOffers: 'Offres',
-    cartEmpty: 'Votre panier est vide.', cartTotal: 'Total', removeBtn: 'Supprimer',
-    cartConfirm: 'Confirmer la commande via WhatsApp'
+    offerModalTitle: 'Pack 4 parfums = 160 DH', offerModalText: 'Profitez d\'un prix exceptionnel sur notre sélection Premium.', offerModalBtn: 'Profiter de l\'offre'
   },
   ar: {
     brandName: 'زيڤارو', brandTag: 'عطور فاخرة',
@@ -50,77 +41,37 @@ const translations = {
     adv4Title: 'رضا مضمون', adv4Text: 'خدمة عملاء ممتازة ومريحة.',
     testimonialsLabel: 'آراء العملاء', testimonialsTitle: 'ماذا يقول عملاؤنا عنّا',
     footerText: 'عطور فاخرة مستوحاة من أشهر العلامات، متاحة بسهولة وبتصميم عصري.', footerContact: 'تواصل',
-    cartTitle: 'السلة', cartClear: 'إفراغ', cartWhatsapp: '📲 تأكيد الطلب عبر واتساب',
-    offerModalTitle: '4 عطور = 160 درهم', offerModalText: 'استفد من سعر خاص على مجموعتنا الفاخرة.', offerModalBtn: 'استفد من العرض',
-    pageTitle: 'زيڤارو – عطور فاخرة', aboutIntro: 'الأناقة تبدأ بهوية قوية.',
-    aboutMission: 'رسالتنا', aboutValues: 'قيمنا', aboutStatsTitle: 'أرقام مهمة',
-    contactTitle: 'تواصل معنا', contactText: 'نحن جاهزون لنصحك ومرافقتك في اختيار عطورك.',
-    formName: 'الاسم', formEmail: 'البريد الإلكتروني', formMessage: 'الرسالة', formSend: 'إرسال',
-    contactDetails: 'معلومات التواصل', addressTitle: 'العنوان', addressText: 'الدار البيضاء، المغرب',
-    filtersAll: 'الكل', filtersLuxe: 'فخم', filtersNiche: 'نيش', filtersDaily: 'يومي', filtersOffers: 'عروض',
-    cartEmpty: 'سلة التسوق فارغة.', cartTotal: 'الإجمالي', removeBtn: 'حذف',
-    cartConfirm: 'تأكيد الطلب عبر واتساب'
+    offerModalTitle: '4 عطور = 160 درهم', offerModalText: 'استفد من سعر خاص على مجموعتنا الفاخرة.', offerModalBtn: 'استفد من العرض'
   }
 };
 
-const WA_NUMBER = '212778224439';
-
-function buildWhatsAppMessage() {
-  const t = translations[currentLang];
-  let msg = currentLang === 'ar'
-    ? 'مرحباً، أريد طلب العطور التالية من ZIVARO:\n\n'
-    : 'Bonjour, je voudrais commander les parfums suivants de ZIVARO:\n\n';
-  let total = 0;
-  cart.forEach((item, i) => {
-    msg += `${i + 1}. ${item.name} — ${item.price} DH\n`;
-    total += item.price;
-  });
-  msg += `\n${t.cartTotal}: ${total} DH`;
-  msg += currentLang === 'ar'
-    ? '\n\nأرجو التأكيد والتوصيل 🙏'
-    : '\n\nMerci de confirmer et d\'organiser la livraison 🙏';
-  return encodeURIComponent(msg);
-}
-
-function confirmOrder() {
-  if (!cart.length) return;
-  const msg = buildWhatsAppMessage();
-  window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
-}
-
+// ===== CART =====
 function addToCart(name, price) {
   cart.push({ name, price });
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
   renderCart();
-  showToast(`${name} ${currentLang === 'ar' ? 'أضيف إلى السلة ✓' : 'ajouté au panier ✓'}`);
+  showToast(name + ' ✓ أضيف للسلة');
 }
 
 function renderCart() {
   const items = document.getElementById('cart-items');
   const totalBox = document.getElementById('total');
   const count = document.getElementById('cart-count');
-  const t = translations[currentLang];
   if (count) count.textContent = cart.length;
   if (!items) return;
   items.innerHTML = '';
   let total = 0;
   if (!cart.length) {
-    items.innerHTML = `<p style="text-align:center;padding:20px 0;color:var(--muted)">${t.cartEmpty}</p>`;
+    items.innerHTML = '<p style="text-align:center;padding:20px 0;color:#7a6e58">السلة فارغة.</p>';
   } else {
     cart.forEach((item, index) => {
       total += item.price;
       const p = document.createElement('p');
-      p.innerHTML = `<span style="color:var(--text)">${item.name}</span> <span style="color:var(--accent-2);font-weight:700">— ${item.price} DH</span> <button class="remove-btn" onclick="removeFromCart(${index})">${t.removeBtn}</button>`;
+      p.innerHTML = '<span style="color:#f8f3e8">' + item.name + '</span> <span style="color:#e8c96a;font-weight:700"> — ' + item.price + ' DH</span> <button onclick="removeFromCart(' + index + ')" style="background:transparent;border:0;color:#c9a84c;cursor:pointer;margin-right:8px;">حذف</button>';
       items.appendChild(p);
     });
   }
-  if (totalBox) totalBox.textContent = `${t.cartTotal}: ${total} DH`;
-  const waBtn = document.getElementById('cart-wa-btn');
-  if (waBtn) {
-    waBtn.disabled = cart.length === 0;
-    waBtn.style.opacity = cart.length === 0 ? '0.4' : '1';
-    waBtn.style.cursor = cart.length === 0 ? 'not-allowed' : 'pointer';
-  }
+  if (totalBox) totalBox.textContent = 'الإجمالي: ' + total + ' DH';
 }
 
 function removeFromCart(index) {
@@ -146,6 +97,68 @@ function closeCart() {
   if (box) box.style.display = 'none';
 }
 
+// ===== ORDER MODAL =====
+function openOrderModal() {
+  if (!cart.length) {
+    showToast('⚠️ السلة فارغة!');
+    return;
+  }
+  // عرض ملخص السلة في الـ modal
+  let summary = '';
+  let total = 0;
+  cart.forEach(item => {
+    summary += '• ' + item.name + ' (' + item.price + ' DH)\n';
+    total += item.price;
+  });
+  const summaryEl = document.getElementById('order-summary');
+  if (summaryEl) summaryEl.textContent = 'الإجمالي: ' + total + ' DH';
+
+  document.getElementById('order-name').value = '';
+  document.getElementById('order-city').value = '';
+  document.getElementById('order-address').value = '';
+  document.getElementById('order-phone').value = '';
+
+  const modal = document.getElementById('order-modal');
+  if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+  closeCart();
+}
+
+function closeOrderModal() {
+  const modal = document.getElementById('order-modal');
+  if (modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function submitOrder() {
+  const name    = document.getElementById('order-name').value.trim();
+  const city    = document.getElementById('order-city').value.trim();
+  const address = document.getElementById('order-address').value.trim();
+  const phone   = document.getElementById('order-phone').value.trim();
+
+  if (!name || !city || !address || !phone) {
+    alert('⚠️ رجاءً أكمل جميع الحقول');
+    return;
+  }
+
+  let productsList = '';
+  let total = 0;
+  cart.forEach((item, i) => {
+    productsList += (i + 1) + '. ' + item.name + ' — ' + item.price + ' DH\n';
+    total += item.price;
+  });
+
+  const msg = 'مرحباً ZIVARO 🌹\n\nطلب جديد:\n\n' + productsList + '\n💰 الإجمالي: ' + total + ' DH\n\n👤 الاسم: ' + name + '\n🏙️ المدينة: ' + city + '\n📍 الموقع: ' + address + '\n📞 الهاتف: ' + phone + '\n\nشكراً! 🌹';
+
+  window.open('https://wa.me/212778224439?text=' + encodeURIComponent(msg), '_blank');
+  clearCart();
+  closeOrderModal();
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeOrderModal();
+});
+
+// ===== TOAST =====
 function showToast(message) {
   const toast = document.getElementById('toast');
   if (!toast) return;
@@ -155,11 +168,13 @@ function showToast(message) {
   showToast.timeout = setTimeout(() => toast.classList.remove('show'), 1800);
 }
 
+// ===== OFFER MODAL =====
 function closeOfferModal() {
   const modal = document.getElementById('offer-modal');
   if (modal) modal.classList.remove('show');
 }
 
+// ===== LANG =====
 function toggleLanguage() {
   currentLang = currentLang === 'fr' ? 'ar' : 'fr';
   localStorage.setItem('zivaro-lang', currentLang);
@@ -174,15 +189,10 @@ function updateLanguage() {
     const key = el.getAttribute('data-i18n');
     if (translations[currentLang]?.[key]) el.textContent = translations[currentLang][key];
   });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[currentLang]?.[key]) el.placeholder = translations[currentLang][key];
-  });
-  const waBtn = document.getElementById('cart-wa-btn');
-  if (waBtn) waBtn.textContent = translations[currentLang].cartWhatsapp;
   renderCart();
 }
 
+// ===== FILTERS =====
 function initFilters() {
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('[data-category]');
@@ -198,34 +208,14 @@ function initFilters() {
   });
 }
 
+// ===== MENU =====
 function initMenu() {
   const toggle = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-nav]');
   if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('open'));
 }
 
-function injectCartWhatsAppButton() {
-  const footer = document.querySelector('.cart-footer');
-  if (!footer) return;
-  const oldClear = footer.querySelector('.btn-primary');
-  if (oldClear) oldClear.remove();
-  const waBtn = document.createElement('button');
-  waBtn.id = 'cart-wa-btn';
-  waBtn.type = 'button';
-  waBtn.textContent = translations[currentLang].cartWhatsapp;
-  waBtn.onclick = confirmOrder;
-  waBtn.style.cssText = `
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: #fff; border: 0; border-radius: 999px;
-    padding: 11px 18px; font-weight: 700; font-size: 0.9rem;
-    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.35); flex: 1;
-  `;
-  waBtn.onmouseenter = () => { waBtn.style.transform = 'translateY(-2px)'; waBtn.style.boxShadow = '0 8px 28px rgba(37,211,102,0.5)'; };
-  waBtn.onmouseleave = () => { waBtn.style.transform = ''; waBtn.style.boxShadow = '0 4px 20px rgba(37,211,102,0.35)'; };
-  footer.appendChild(waBtn);
-}
-
+// ===== INIT =====
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.toggle('lang-ar', currentLang === 'ar');
   document.documentElement.lang = currentLang;
@@ -234,16 +224,19 @@ window.addEventListener('DOMContentLoaded', () => {
   renderCart();
   initMenu();
   initFilters();
-  injectCartWhatsAppButton();
+
   document.querySelectorAll('[data-add-to-cart]').forEach((btn) => {
     btn.addEventListener('click', () => addToCart(btn.getAttribute('data-name'), Number(btn.getAttribute('data-price'))));
   });
+
   document.querySelector('[data-lang-toggle]')?.addEventListener('click', toggleLanguage);
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.15 });
   reveals.forEach((section) => observer.observe(section));
+
   const modal = document.getElementById('offer-modal');
   if (modal) setTimeout(() => modal.classList.add('show'), 500);
 });
