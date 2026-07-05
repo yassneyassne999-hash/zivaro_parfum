@@ -9,6 +9,140 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ===== WAVE ANIMATION ===== */
+      .wave-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        margin-bottom: -2px;
+      }
+      .wave-container svg {
+        display: block;
+        width: 100%;
+      }
+      .hero-wave-wrap {
+        position: relative;
+        background: linear-gradient(135deg, #0a0800 0%, #1a1200 40%, #0d0a00 100%);
+        padding: 80px 24px 60px;
+        overflow: hidden;
+      }
+      /* موجات الكانفاس */
+      #wave-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-wave-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .hero-wave-content .pill {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 999px;
+        background: rgba(201,168,76,0.15);
+        color: #e8c96a;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        border: 1px solid rgba(201,168,76,0.3);
+        animation: fadeUp 0.8s ease forwards 0.2s;
+        opacity: 0;
+      }
+      .hero-wave-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.2rem, 6vw, 5rem);
+        font-weight: 800;
+        color: #fff;
+        margin: 0 0 16px;
+        line-height: 1.1;
+        animation: fadeUp 0.8s ease forwards 0.4s;
+        opacity: 0;
+      }
+      .hero-wave-title .gold-word {
+        background: linear-gradient(90deg, #c9a84c, #f5e6b8, #c9a84c);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shimmer 3s linear infinite, fadeUp 0.8s ease forwards 0.4s;
+      }
+      @keyframes shimmer {
+        to { background-position: 200% center; }
+      }
+      .hero-wave-sub {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        color: #9a8a6a;
+        margin: 0 0 36px;
+        line-height: 1.8;
+        animation: fadeUp 0.8s ease forwards 0.6s;
+        opacity: 0;
+      }
+      .hero-wave-actions {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeUp 0.8s ease forwards 0.8s;
+        opacity: 0;
+      }
+      .hero-wave-stats {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 36px;
+        animation: fadeUp 0.8s ease forwards 1s;
+        opacity: 0;
+      }
+      .hero-wave-stats div {
+        padding: 12px 20px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(201,168,76,0.15);
+        text-align: center;
+        min-width: 110px;
+      }
+      .hero-wave-stats strong {
+        display: block;
+        color: #e8c96a;
+        font-size: 1.2rem;
+      }
+      .hero-wave-stats span {
+        font-size: 0.75rem;
+        color: #7a6e58;
+      }
+      /* bottom wave divider */
+      .wave-divider {
+        position: relative;
+        height: 80px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0a0800, #0d0a00);
+      }
+      .wave-divider::before {
+        content: '';
+        position: absolute;
+        bottom: 0; left: -50%;
+        width: 200%;
+        height: 100%;
+        background: var(--bg, #050505);
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      }
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -38,6 +172,28 @@
 
     <main id="top">
 
+      <!-- ===== HERO مع موجة ذهبية ===== -->
+      <div class="hero-wave-wrap">
+        <canvas id="wave-canvas"></canvas>
+        <div class="hero-wave-content">
+          <span class="pill" data-i18n="heroBadge">✦ المجموعة الجديدة 2026 ✦</span>
+          <h1 class="hero-wave-title">
+            <span class="gold-word">ZIVARO</span><br/>
+            <span data-i18n="heroTitle">روائح تُلفت الأنظار</span>
+          </h1>
+          <p class="hero-wave-sub" data-i18n="heroText">عطور 30 مل مستوحاة من أشهر العلامات العالمية، بجودة مميزة وثبات ممتاز وأسعار تنافسية.</p>
+          <div class="hero-wave-actions">
+            <a class="btn btn-primary" href="parfums.html" data-i18n="heroBtnPrimary">اطلب الآن</a>
+            <a class="btn btn-secondary" href="parfums.html" data-i18n="heroBtnSecondary">شوف العطور</a>
+          </div>
+          <div class="hero-wave-stats">
+            <div><strong>4.9/5</strong><span data-i18n="statClients">زبناء راضيين</span></div>
+            <div><strong>24h</strong><span data-i18n="statDelivery">توصيل سريع</span></div>
+            <div><strong>50+</strong><span data-i18n="statParfums">عطور</span></div>
+          </div>
+        </div>
+      </div>
+
       <!-- PACK SPECIAL -->
       <div style="margin:24px 0 32px;border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
         <img src="zivaro/images/WhatsApp Image 2026-06-29 at 20.41.51.jpeg" alt="Pack 4 Parfums Zivaro" style="width:100%;display:block;object-fit:cover;max-height:500px;" />
@@ -52,36 +208,6 @@
           </button>
         </div>
       </div>
-
-      <section class="hero reveal">
-        <div class="hero-content">
-          <span class="pill" data-i18n="heroBadge">المجموعة الجديدة 2026</span>
-          <h2 data-i18n="heroTitle">روائح أنيقة تُلفت الأنظار وتترك أثرًا لا يُنسى.</h2>
-          <p data-i18n="heroText">عطور 30 مل مستوحاة من أشهر العلامات العالمية، بجودة مميزة وثبات ممتاز وأسعار تنافسية.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="parfums.html" data-i18n="heroBtnPrimary">اطلب الآن</a>
-            <a class="btn btn-secondary" href="parfums.html" data-i18n="heroBtnSecondary">شوف العطور</a>
-          </div>
-          <div class="hero-stats">
-            <div><strong>4.9/5</strong><span data-i18n="statClients">زبناء راضيين</span></div>
-            <div><strong>24h</strong><span data-i18n="statDelivery">توصيل سريع</span></div>
-            <div><strong>50+</strong><span data-i18n="statParfums">عطور</span></div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="hero-card card-main">
-            <h3 data-i18n="heroCardTitle">التوقيع الفاخر</h3>
-            <p data-i18n="heroCardText">رائحة أنيقة تُلفت الانتباه فورًا</p>
-            <span data-i18n="heroCardPrice">ابتداء من 40 درهم</span>
-          </div>
-          <div class="hero-card card-side">
-            <h3 data-i18n="offerCardTitle">عرض خاص</h3>
-            <p data-i18n="offerCardText">4 عطور = 160 درهم</p>
-          </div>
-        </div>
-      </section>
 
       <section class="featured-strip reveal">
         <div><strong>✨</strong><span data-i18n="feature1">جودة مميزة</span></div>
@@ -180,7 +306,6 @@
       <div><p>© 2026 ZIVARO</p></div>
     </footer>
 
-    <!-- السلة -->
     <div class="cart-box" id="cart-box" aria-live="polite">
       <div class="cart-header">
         <h3>السلة 🛒</h3>
@@ -195,7 +320,6 @@
       </div>
     </div>
 
-    <!-- MODAL معلومات الطلب -->
     <div id="order-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:20px;">
       <div style="background:#151515;border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:28px;max-width:420px;width:100%;position:relative;">
         <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);border-radius:20px 20px 0 0;"></div>
@@ -221,6 +345,53 @@
         <button class="btn btn-primary" type="button" onclick="closeOfferModal()" data-i18n="offerModalBtn">استفد من العرض</button>
       </div>
     </div>
+
+    <script>
+    // ===== GOLDEN WAVE ANIMATION =====
+    const canvas = document.getElementById('wave-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, t = 0;
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function drawWaves() {
+      ctx.clearRect(0, 0, W, H);
+      const waves = [
+        { amp: 28, freq: 0.012, speed: 0.018, y: H * 0.55, alpha: 0.18, width: 2.5 },
+        { amp: 20, freq: 0.018, speed: 0.025, y: H * 0.65, alpha: 0.12, width: 1.8 },
+        { amp: 35, freq: 0.009, speed: 0.012, y: H * 0.75, alpha: 0.09, width: 3.5 },
+        { amp: 15, freq: 0.022, speed: 0.032, y: H * 0.45, alpha: 0.07, width: 1.2 },
+      ];
+
+      waves.forEach(w => {
+        ctx.beginPath();
+        ctx.moveTo(0, w.y);
+        for (let x = 0; x <= W; x += 4) {
+          const y = w.y + Math.sin(x * w.freq + t * w.speed * 60) * w.amp
+                        + Math.sin(x * w.freq * 1.7 + t * w.speed * 40) * (w.amp * 0.4);
+          ctx.lineTo(x, y);
+        }
+        const grad = ctx.createLinearGradient(0, 0, W, 0);
+        grad.addColorStop(0,   `rgba(201,168,76,0)`);
+        grad.addColorStop(0.3, `rgba(232,201,106,${w.alpha})`);
+        grad.addColorStop(0.5, `rgba(245,230,184,${w.alpha * 1.5})`);
+        grad.addColorStop(0.7, `rgba(232,201,106,${w.alpha})`);
+        grad.addColorStop(1,   `rgba(201,168,76,0)`);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = w.width;
+        ctx.stroke();
+      });
+
+      t += 0.016;
+      requestAnimationFrame(drawWaves);
+    }
+    drawWaves();
+    </script>
 
     <script src="script.js"></script>
   </body>
