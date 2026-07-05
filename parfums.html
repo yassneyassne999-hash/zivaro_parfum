@@ -49,7 +49,10 @@
             <div class="product-info">
               <h3>Prada Paradoxe</h3>
               <p>عطر زهري أنيق و Feminine.</p>
-              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Prada Paradoxe" data-price="40">أضف</button></div>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Prada Paradoxe" data-price="40">أضف</button>
+              </div>
             </div>
           </article>
 
@@ -58,7 +61,10 @@
             <div class="product-info">
               <h3>Kayali Vanilla 28</h3>
               <p>فانيليا دافئة ولذيذة.</p>
-              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Kayali Vanilla 28" data-price="40">أضف</button></div>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Kayali Vanilla 28" data-price="40">أضف</button>
+              </div>
             </div>
           </article>
 
@@ -67,16 +73,22 @@
             <div class="product-info">
               <h3>Jean Paul Gaultier</h3>
               <p>توقيع جذاب ومناسب يوميًا.</p>
-              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Jean Paul Gaultier" data-price="40">أضف</button></div>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Jean Paul Gaultier" data-price="40">أضف</button>
+              </div>
             </div>
           </article>
 
           <article class="product-card" data-category="offers">
-            <img src="zivaro/images/img src=imagesperfume3.jpg.jpeg" alt="Givenchy L'Interdit" />
+            <img src="zivaro/images/img src=imagesperfume3.jpg.jpeg" alt="Givenchy L Interdit" />
             <div class="product-info">
               <h3>Givenchy L'Interdit</h3>
               <p>أناقة وقوة في عطر واحد.</p>
-              <div class="product-footer"><strong>40 DH</strong><button type="button" data-add-to-cart data-name="Givenchy L'Interdit" data-price="40">أضف</button></div>
+              <div class="product-footer">
+                <strong>40 DH</strong>
+                <button type="button" data-add-to-cart data-name="Givenchy L'Interdit" data-price="40">أضف</button>
+              </div>
             </div>
           </article>
 
@@ -85,7 +97,10 @@
             <div class="product-info">
               <h3>Pack 4 Parfums</h3>
               <p>عرض خاص: 4 عطور = 160 درهم + توصيل مجاني.</p>
-              <div class="product-footer"><strong>160 DH</strong><button type="button" data-add-to-cart data-name="Pack 4 Parfums" data-price="160">أضف</button></div>
+              <div class="product-footer">
+                <strong>160 DH</strong>
+                <button type="button" data-add-to-cart data-name="Pack 4 Parfums" data-price="160">أضف</button>
+              </div>
             </div>
           </article>
 
@@ -95,15 +110,45 @@
 
     <footer class="footer">
       <div><h3>ZIVARO</h3><p>Parfums de luxe inspirés des grandes maisons.</p></div>
-      <div><a href="https://wa.me/212778224439" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/zivaro_parfum?igsh=MW4wYmFqZ2F5ZXcwdw==" target="_blank" rel="noopener">Instagram ZIVARO</a></div>
+      <div>
+        <a href="https://wa.me/212778224439" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/zivaro_parfum?igsh=MW4wYmFqZ2F5ZXcwdw==" target="_blank" rel="noopener">Instagram ZIVARO</a>
+      </div>
       <div><p>© 2026 ZIVARO</p></div>
     </footer>
 
+    <!-- السلة -->
     <div class="cart-box" id="cart-box" aria-live="polite">
-      <div class="cart-header"><h3>Panier</h3><button type="button" onclick="closeCart()">✕</button></div>
+      <div class="cart-header">
+        <h3>السلة 🛒</h3>
+        <button type="button" onclick="closeCart()">✕</button>
+      </div>
       <div id="cart-items"></div>
-      <div class="cart-footer"><h4 id="total">Total : 0 DH</h4><button class="btn btn-primary" type="button" onclick="clearCart()">Vider</button></div>
+      <div class="cart-footer">
+        <h4 id="total">الإجمالي: 0 DH</h4>
+        <button type="button" onclick="openOrderModal()" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;padding:12px 20px;border-radius:999px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;">
+          📲 تأكيد الطلب عبر واتساب
+        </button>
+      </div>
     </div>
+
+    <!-- MODAL طلب -->
+    <div id="order-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:20px;">
+      <div style="background:#151515;border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:28px;max-width:420px;width:100%;position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);border-radius:20px 20px 0 0;"></div>
+        <button onclick="closeOrderModal()" style="position:absolute;top:14px;left:14px;background:transparent;border:0;color:#c9a84c;font-size:1.3rem;cursor:pointer;">✕</button>
+        <h3 style="font-family:'Playfair Display',serif;color:#f8f3e8;text-align:center;margin:0 0 6px;font-size:1.4rem;">تأكيد الطلب</h3>
+        <p id="order-summary" style="text-align:center;color:#c9a84c;font-size:0.82rem;margin:0 0 20px;letter-spacing:1px;"></p>
+        <div style="display:grid;gap:12px;">
+          <input id="order-name" type="text" placeholder="الاسم الكامل *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;font-family:'Poppins',sans-serif;" />
+          <input id="order-city" type="text" placeholder="المدينة *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;font-family:'Poppins',sans-serif;" />
+          <input id="order-address" type="text" placeholder="الموقع / الحي *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;font-family:'Poppins',sans-serif;" />
+          <input id="order-phone" type="tel" placeholder="رقم الهاتف *" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#f8f3e8;font-size:0.9rem;outline:none;font-family:'Poppins',sans-serif;" />
+        </div>
+        <button onclick="submitOrder()" style="width:100%;margin-top:18px;padding:13px;background:linear-gradient(135deg,#7a6330,#c9a84c,#e8c96a);color:#111;border:0;border-radius:10px;font-weight:700;font-size:0.95rem;letter-spacing:2px;cursor:pointer;font-family:'Poppins',sans-serif;">📲 إرسال الطلب عبر واتساب</button>
+      </div>
+    </div>
+
     <div class="toast" id="toast"></div>
     <script src="script.js"></script>
   </body>
