@@ -11,7 +11,7 @@ const translations = {
     heroBtnPrimary: 'Commander maintenant', heroBtnSecondary: 'Voir les parfums',
     statClients: 'clients satisfaits', statDelivery: 'livraison rapide', statParfums: 'parfums',
     heroCardTitle: 'Signature Elite', heroCardText: 'Une fragrance chic et captivante', heroCardPrice: 'À partir de 40 DH',
-    offerCardTitle: 'Offre spéciale', offerCardText: '4 parfums = 160 DH',
+    offerCardTitle: 'Offre spéciale', offerCardText: '4 parfums = 149 DH',
     feature1: 'Qualité Premium', feature2: 'Livraison rapide', feature3: 'Prix accessibles', feature4: 'Satisfaction garantie',
     bestSellersLabel: 'Meilleures ventes', bestSellersTitle: 'Choisissez votre signature', bestSellersText: 'Des accords raffinés et modernes pour toutes les occasions.',
     advantagesLabel: 'Avantages', advantagesTitle: 'Pourquoi choisir ZIVARO ?',
@@ -21,7 +21,7 @@ const translations = {
     adv4Title: 'Satisfaction Garantie', adv4Text: 'Une expérience client soignée et rassurante.',
     testimonialsLabel: 'Témoignages', testimonialsTitle: 'Ce que disent nos clients',
     footerText: 'Parfums de luxe inspirés des grandes maisons, à portée de main.', footerContact: 'Contact',
-    offerModalTitle: 'Pack 4 parfums = 160 DH', offerModalText: 'Profitez d\'un prix exceptionnel sur notre sélection Premium.', offerModalBtn: 'Profiter de l\'offre'
+    offerModalTitle: 'Pack 4 parfums = 149 DH', offerModalText: 'Profitez d\'un prix exceptionnel sur notre sélection Premium.', offerModalBtn: 'Profiter de l\'offre'
   },
   ar: {
     brandName: 'زيڤارو', brandTag: 'عطور فاخرة',
@@ -31,7 +31,7 @@ const translations = {
     heroBtnPrimary: 'اطلب الآن', heroBtnSecondary: 'تصفح العطور',
     statClients: 'عميل راضٍ', statDelivery: 'توصيل سريع', statParfums: 'عطر',
     heroCardTitle: 'التوقيع الفاخر', heroCardText: 'رائحة أنيقة تُلفت الانتباه فورًا', heroCardPrice: 'ابتداءً من 40 درهم',
-    offerCardTitle: 'عرض خاص', offerCardText: '4 عطور = 160 درهم',
+    offerCardTitle: 'عرض خاص', offerCardText: '4 عطور = 149 درهم',
     feature1: 'جودة مميزة', feature2: 'توصيل سريع', feature3: 'أسعار مناسبة', feature4: 'رضا مضمون',
     bestSellersLabel: 'الأكثر مبيعًا', bestSellersTitle: 'اختر توقيعك', bestSellersText: 'روائح راقية وحديثة تناسب كل المناسبات.',
     advantagesLabel: 'المزايا', advantagesTitle: 'لماذا تختار زيڤارو؟',
@@ -41,7 +41,7 @@ const translations = {
     adv4Title: 'رضا مضمون', adv4Text: 'خدمة عملاء ممتازة ومريحة.',
     testimonialsLabel: 'آراء العملاء', testimonialsTitle: 'ماذا يقول عملاؤنا عنّا',
     footerText: 'عطور فاخرة مستوحاة من أشهر العلامات، متاحة بسهولة وبتصميم عصري.', footerContact: 'تواصل',
-    offerModalTitle: '4 عطور = 160 درهم', offerModalText: 'استفد من سعر خاص على مجموعتنا الفاخرة.', offerModalBtn: 'استفد من العرض'
+    offerModalTitle: '4 عطور = 149 درهم', offerModalText: 'استفد من سعر خاص على مجموعتنا الفاخرة.', offerModalBtn: 'استفد من العرض'
   }
 };
 
@@ -103,21 +103,14 @@ function openOrderModal() {
     showToast('⚠️ السلة فارغة!');
     return;
   }
-  // عرض ملخص السلة في الـ modal
-  let summary = '';
   let total = 0;
-  cart.forEach(item => {
-    summary += '• ' + item.name + ' (' + item.price + ' DH)\n';
-    total += item.price;
-  });
+  cart.forEach(item => { total += item.price; });
   const summaryEl = document.getElementById('order-summary');
   if (summaryEl) summaryEl.textContent = 'الإجمالي: ' + total + ' DH';
-
   document.getElementById('order-name').value = '';
   document.getElementById('order-city').value = '';
   document.getElementById('order-address').value = '';
   document.getElementById('order-phone').value = '';
-
   const modal = document.getElementById('order-modal');
   if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
   closeCart();
@@ -134,21 +127,17 @@ function submitOrder() {
   const city    = document.getElementById('order-city').value.trim();
   const address = document.getElementById('order-address').value.trim();
   const phone   = document.getElementById('order-phone').value.trim();
-
   if (!name || !city || !address || !phone) {
     alert('⚠️ رجاءً أكمل جميع الحقول');
     return;
   }
-
   let productsList = '';
   let total = 0;
   cart.forEach((item, i) => {
     productsList += (i + 1) + '. ' + item.name + ' — ' + item.price + ' DH\n';
     total += item.price;
   });
-
   const msg = 'مرحباً ZIVARO 🌹\n\nطلب جديد:\n\n' + productsList + '\n💰 الإجمالي: ' + total + ' DH\n\n👤 الاسم: ' + name + '\n🏙️ المدينة: ' + city + '\n📍 الموقع: ' + address + '\n📞 الهاتف: ' + phone + '\n\nشكراً! 🌹';
-
   window.open('https://wa.me/212778224439?text=' + encodeURIComponent(msg), '_blank');
   clearCart();
   closeOrderModal();
