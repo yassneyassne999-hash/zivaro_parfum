@@ -8,6 +8,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .parfums-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 20px 0 28px;
+      }
+      .parfum-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        background: rgba(201,168,76,0.07);
+        border: 1px solid rgba(201,168,76,0.2);
+        transition: all 0.3s;
+      }
+      .parfum-item:hover {
+        background: rgba(201,168,76,0.13);
+        border-color: rgba(201,168,76,0.45);
+        transform: translateY(-2px);
+      }
+      .parfum-icon { font-size: 1.3rem; flex-shrink: 0; }
+      .parfum-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 0.95rem;
+        color: #f8f3e8;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      @media (max-width: 560px) {
+        .parfums-list { grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -34,18 +68,37 @@
     <main>
       <section class="section reveal">
         <h2 class="page-title">مجموعة العطور</h2>
-        <p class="page-intro">اكتشف عرضنا الحصري — Pack 4 عطور فاخرة بسعر استثنائي.</p>
+        <p class="page-intro">Pack حصري — 4 عطور فاخرة بسعر استثنائي مع توصيل مجاني.</p>
+
+        <!-- أسماء العطور -->
+        <div class="parfums-list">
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Kayali Vanilla</span>
+          </div>
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Prada Paradoxe</span>
+          </div>
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Givenchy L'Interdit</span>
+          </div>
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Jean Paul Gaultier La Belle</span>
+          </div>
+        </div>
 
         <!-- PACK SPECIAL -->
-        <div style="margin:24px 0;border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+        <div style="margin:0 0 24px;border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
           <img src="zivaro/images/WhatsApp Image 2026-06-29 at 20.41.51.jpeg" alt="Pack 4 Parfums Zivaro" style="width:100%;display:block;object-fit:cover;max-height:600px;" />
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);"></div>
           <div style="position:absolute;bottom:0;left:0;right:0;padding:40px;text-align:center;">
             <p style="font-size:0.7rem;letter-spacing:5px;color:#c9a84c;text-transform:uppercase;margin:0 0 10px;">✦ عرض خاص ✦</p>
             <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin:0 0 8px;line-height:1.1;">Pack 4 Parfums</h2>
             <p style="font-size:clamp(1.4rem,3vw,2.2rem);color:#e8c96a;font-weight:700;margin:0 0 6px;letter-spacing:2px;">149 DH — توصيل مجاني 🚚</p>
-            <p style="font-size:0.9rem;color:#d8c9a3;letter-spacing:1px;margin:0 0 8px;">🌹 كل قارورة 30ml</p>
-            <p style="font-size:0.8rem;color:#9a8a6a;margin:0 0 28px;">مستوحاة من: Prada · Kayali · Jean Paul Gaultier · Givenchy</p>
+            <p style="font-size:0.9rem;color:#d8c9a3;letter-spacing:1px;margin:0 0 28px;">🌹 كل قارورة 30ml</p>
             <button onclick="addToCart('Pack 4 Parfums', 149)" style="display:inline-block;padding:14px 42px;background:linear-gradient(135deg,#7a6330,#c9a84c,#e8c96a);color:#111;font-weight:700;font-size:0.95rem;letter-spacing:3px;text-transform:uppercase;border-radius:999px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(201,168,76,0.4);">
               🛒 أضف للسلة
             </button>
@@ -64,7 +117,6 @@
       <div><p>© 2026 ZIVARO</p></div>
     </footer>
 
-    <!-- السلة -->
     <div class="cart-box" id="cart-box" aria-live="polite">
       <div class="cart-header">
         <h3>السلة 🛒</h3>
@@ -79,7 +131,6 @@
       </div>
     </div>
 
-    <!-- MODAL طلب -->
     <div id="order-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:20px;">
       <div style="background:#151515;border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:28px;max-width:420px;width:100%;position:relative;">
         <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);border-radius:20px 20px 0 0;"></div>
