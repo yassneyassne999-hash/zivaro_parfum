@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="rtl">
   <head>
@@ -24,6 +26,39 @@
       .hero-wave-stats strong { display: block; color: #e8c96a; font-size: 1.2rem; }
       .hero-wave-stats span { font-size: 0.75rem; color: #7a6e58; }
       @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+      /* أسماء العطور */
+      .parfums-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 0 0 20px;
+      }
+      .parfum-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        background: rgba(201,168,76,0.07);
+        border: 1px solid rgba(201,168,76,0.2);
+        transition: all 0.3s;
+      }
+      .parfum-item:hover {
+        background: rgba(201,168,76,0.13);
+        border-color: rgba(201,168,76,0.45);
+        transform: translateY(-2px);
+      }
+      .parfum-icon { font-size: 1.2rem; flex-shrink: 0; }
+      .parfum-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 0.9rem;
+        color: #f8f3e8;
+        font-weight: 600;
+      }
+      @media (max-width: 560px) {
+        .parfums-list { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
@@ -74,8 +109,30 @@
         </div>
       </div>
 
+      <!-- أسماء العطور -->
+      <div style="padding:0 24px;margin:24px 0 0;">
+        <div class="parfums-list">
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Kayali Vanilla</span>
+          </div>
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Prada Paradoxe</span>
+          </div>
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Givenchy L'Interdit</span>
+          </div>
+          <div class="parfum-item">
+            <span class="parfum-icon">🌸</span>
+            <span class="parfum-name">Jean Paul Gaultier La Belle</span>
+          </div>
+        </div>
+      </div>
+
       <!-- PACK SPECIAL -->
-      <div style="margin:24px 0 32px;border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+      <div style="margin:0 0 32px;border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
         <img src="zivaro/images/WhatsApp Image 2026-06-29 at 20.41.51.jpeg" alt="Pack 4 Parfums Zivaro" style="width:100%;display:block;object-fit:cover;max-height:500px;" />
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);"></div>
         <div style="position:absolute;bottom:0;left:0;right:0;padding:32px;text-align:center;">
